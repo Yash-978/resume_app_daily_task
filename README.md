@@ -1,8 +1,6 @@
 # resume_app_daily_task
 
 
-
-
 # 1. What is List ?
 
 * In Dart, a list is an ordered collection of objects that is similar to an array. Lists are defined by storing elements in square brackets ([]) and separating them with commas (,). 
@@ -34,6 +32,12 @@ void main() {
 # 2. What is Map ?
 
 *  In Flutter and Dart, a map is a collection of data in key-value pairs.
+
+`Generics`:
+
+Generics in Dart provide a way to write reusable code that can work with different types. They allow you to define classes, functions, and interfaces that can operate on a variety of data types without sacrificing type safety. Generics are denoted by using angle brackets < > and a type parameter.
+
+
 ```bash
 void main() {
   // Creating a Map
@@ -47,6 +51,7 @@ void main() {
 }
 
 ```
+
 
 
 
@@ -83,4 +88,3 @@ The SystemChrome class is used to set the status bar color. This is done by usin
 }
 
 ```
-
