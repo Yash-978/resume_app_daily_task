@@ -47,6 +47,8 @@ void main()
   stdout.write('Enter Your State :- ');
   userInfo.update('state',(value)=>stdin.readLineSync()!);
   
+  
+  // ignore: avoid_print
   print(userInfo);
 
 }
