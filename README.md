@@ -1,16 +1,24 @@
 # resume_app_daily_task
 
-A new Flutter project.
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+# 1. How to set status bar color throghout the app ?
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+* `By Utilizing the SystemChrome Class` :
+The SystemChrome class is used to set the status bar color. This is done by using the setSystemUIOverlayStyle method, where we can specify the color and brightness of the status bar.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```bash
+   Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(statusBarColor: Colors.red));
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.landscapeLeft,
+      DeviceOrientation.landscapeRight,
+    ]);
+
+    return const Placeholder();
+  }
+}
+
+```
+
