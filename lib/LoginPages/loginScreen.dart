@@ -67,11 +67,7 @@ class _LoginPageState extends State<LoginPage> {
               TextField(
                 controller: txtEmail,
                 decoration: InputDecoration(
-                  border: OutlineInputBorder(
-                    borderSide: BorderSide(
-                      color: Colors.red,
-                    ),
-                  ),
+
                   enabledBorder: OutlineInputBorder(
                     borderSide: BorderSide(
                       color: Colors.black,
@@ -86,7 +82,7 @@ class _LoginPageState extends State<LoginPage> {
                    // labelText: 'E-Mail',//label text is used to provide hint at the border of the box
                   // helperText: 'E-Mail',//helper text is used to provide hint below the box
                   hintText:
-                      'E-Mail', //hint text is used to provide hint inside the box
+                      'E-Mail',hintStyle: TextStyle(fontSize: 15) //hint text is used to provide hint inside the box
                 ),
               ),
               SizedBox(
@@ -181,7 +177,8 @@ class _LoginPageState extends State<LoginPage> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Icon(Icons.apple_sharp),
+                      Icon(Icons.apple_sharp,size: 30,),
+                      SizedBox(width: 5,),
                       Text(
                         'Sign-In with Google',
                         style: TextStyle(
