@@ -1,6 +1,9 @@
+
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:resume_app_daily_task/GmailDrawer/list.dart';
 
 class gmailValidationChrome extends StatefulWidget {
   const gmailValidationChrome({super.key});
@@ -13,207 +16,201 @@ class _gmailValidationChromeState extends State<gmailValidationChrome> {
   @override
   Widget build(BuildContext context) {
     TextEditingController txtEmail = TextEditingController();
-    GlobalKey<FormState> formkey =GlobalKey();
+    GlobalKey<FormState> formkey = GlobalKey();
 
     return Scaffold(
-      backgroundColor: const Color(0xfff0f4f8),
+      backgroundColor: Color(0xffF0F4F8),
       body: Form(
         key: formkey,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container(
-                  height: 330,
-                  width: 450,
-                  decoration: const BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(15),
-                        bottomLeft: Radius.circular(15)),
-                  ),
-                  child: Column(
-                    children: [
-                      Container(
-                        margin: const EdgeInsets.only(left: 10, top: 10),
-                        child: Row(
+            Center(
+              child: Container(
+                height: 300,
+                width: 950,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(15), color: Colors.white),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Container(
+                        height: 250,
+                        width: 400,
+                        child: Column(
+                          // mainAxisAlignment: MainAxisAlignment.start,
                           children: [
-                            Image.asset(
-                              'Assets/Images/download (2).png',
-                              height: 62,
-                            ),
-                          ],
-                        ),
-                      ),
-                      const SizedBox(height: 10),
-                      const SizedBox(
-                        width: 13,
-                      ),
-                      Container(
-                        margin: const EdgeInsets.only(left: 20),
-                        child: const Row(
-                          children: [
-                            Text(
-                              'Sign in',
-                              style: TextStyle(
-                                  fontSize: 39, fontWeight: FontWeight.w600),
-                            ),
-                          ],
-                        ),
-                      ),
-                      const SizedBox(
-                        height: 12,
-                      ),
-                      const Row(
-                        children: [
-                          Padding(
-                            padding: EdgeInsets.only(left: 20),
-                            child: Text(
-                              'Use your Google Account',
-                              style: TextStyle(
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.w800,
-                                  color: Color(0xff404040)),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
-                Container(
-                  height: 330,
-                  width: 450,
-                  decoration: const BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.only(
-                      topRight: Radius.circular(15),
-                      bottomRight: Radius.circular(15),
-                    ),
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.only(top: 85, left: 15, right: 15),
-                    child: Column(
-                      children: [
-                        TextFormField(
-                          validator: (value) {
-                            if(value!.isEmpty)
-                            {
-                              return ' please enter @gmail';
-                            }
-                            else if(!value.contains('@gmail.com'))
-                            {
-                              return 'invalid Email ID';
-                            }
-                            else if(value.toString()=='@gmail.com')
-                            {
-                              return 'xyz@gmail.com';
-                            }
-                          },
-                          controller: txtEmail,
-                          decoration: InputDecoration(
-                            labelText: 'Email or Phone',
-                            labelStyle: const TextStyle(
-                              color: Colors.blue,
-                            ),
-                            hintText: 'xyz123@gmail.com',
-                            border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(4),
-                            ),
-                          ),
-                        ),
-                        const Row(
-                          children: [
-                            Padding(
-                              padding: EdgeInsets.only(top: 8),
-                              child: Text(
-                                'Email?',
-                                style: TextStyle(
-                                    color: Color(0xff0A5DCC),
-                                    fontWeight: FontWeight.w600,
-                                    fontSize: 13),
+                            // SizedBox(height: 40,),
+                            Align(
+                              alignment: Alignment.topLeft,
+                              child: Container(
+                                height: 50,
+                                width: 50,
+                                decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                        image: AssetImage(
+                                            'Assets/Images/download (2).png'))),
                               ),
                             ),
-                          ],
-                        ),
-                        const Row(
-                          children: [
-                            Padding(
-                              padding: EdgeInsets.only(top: 50),
+                            SizedBox(
+                              height: 5,
+                            ),
+
+                            Align(
+                              alignment: Alignment.topLeft,
                               child: Text(
-                                'Not your computer? Use guest mode to sign in privately.',
+                                'Sign-in',
                                 style: TextStyle(
-                                    fontWeight: FontWeight.w600, fontSize: 13),
+                                    fontSize: 25, fontWeight: FontWeight.w500),
                               ),
                             ),
-                            Padding(
-                              padding: EdgeInsets.only(top: 50),
+                            SizedBox(
+                              height: 5,
+                            ),
+                            Align(
+                              alignment: Alignment.topLeft,
                               child: Text(
-                                ' Learn more',
+                                'Use your Google Account',
                                 style: TextStyle(
-                                  color: Colors.deepPurple,
-                                  fontWeight: FontWeight.w600,
-                                  fontSize: 13,
+                                  fontSize: 15,
                                 ),
                               ),
-                            )
+                            ),
                           ],
                         ),
-                        Column(
+                      ),
+                    ),
+                    Container(
+                      height: 350,
+                      width: 490,
+                      child: Padding(
+                        padding: const EdgeInsets.only(right: 16),
+                        child: Column(
                           children: [
+                            SizedBox(
+                              height: 80,
+                            ),
+                            SizedBox(
+                              height: 50,
+                              child: TextFormField(
+                                onChanged: (value) {
+
+                                  setState(() {
+                                    email=value;
+                                  });
+                                },
+                                validator: (value){
+                                  if(value!.isEmpty) {
+                                      return 'Please Enter Valid Email';
+                                    }
+                                  else if(value.length>11)
+                                    {
+                                      return 'Value Must be Greater Than 11 ';
+                                    }
+                                  else if(!value.contains('@gmail.com'))
+                                    {
+                                      return 'Enter @gmail.com';
+                                    }
+                                },
+                                  decoration: InputDecoration(
+                                      hintText: 'Email or phone',
+                                      enabledBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                        color: Colors.black,
+                                      )),
+                                      focusedBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                        color: Colors.red,
+                                      )))),
+                            ),
+                            SizedBox(
+                              height: 7,
+                            ),
+                            Align(
+                              alignment: Alignment.topLeft,
+                              child: Text(
+                                'Forgot email?',
+                                style: TextStyle(
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.w600,
+                                    color: Color(0xff125DCB)),
+                              ),
+                            ),
+                            SizedBox(
+                              height: 30,
+                            ),
+                            Align(
+                              alignment: Alignment.topLeft,
+                              child: Row(
+                                children: [
+                                  Text(
+                                    'Not your Computer? Use Guest mode to sign in privetely.',
+                                    style: TextStyle(
+                                      fontSize: 12,
+                                    ),
+                                  ),
+                                  Text(
+                                    'Learn more',
+                                    style: TextStyle(
+                                        fontSize: 12,
+                                        color: Color(0xff125DCB),
+                                        fontWeight: FontWeight.w700),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            SizedBox(
+                              height: 30,
+                            ),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.end,
                               children: [
-                                const Padding(
-                                  padding: EdgeInsets.only(top: 30),
-                                  child: Text(
-                                    'Create account',
-                                    style: TextStyle(
-                                        letterSpacing: 0.5,
-                                        color: Colors.deepPurple,
-                                        fontSize: 14,
-                                        fontWeight: FontWeight.w600),
-                                  ),
+                                Text(
+                                  'Create account',
+                                  style: TextStyle(
+                                      fontSize: 15,
+                                      color: Color(0xff125DCB),
+                                      fontWeight: FontWeight.w500),
                                 ),
-                                const SizedBox(width: 25),
-                                Padding(
-                                  padding:
-                                  const EdgeInsets.only(top: 25, right: 5),
-                                  child: GestureDetector(
-                                    onTap: () {
-                                      bool response = formkey.currentState!.validate();
-                                      if(response)
-                                      {
-                                        Navigator.of(context).pushNamed('/pass');
-                                      }
-                                    },
-                                    child: Container(
-                                      alignment: Alignment.center,
-                                      height: 40,
-                                      width: 76,
-                                      decoration: BoxDecoration(
-                                        color: const Color(0xff0a58d0),
-                                        borderRadius: BorderRadius.circular(30),
-                                      ),
-                                      child: const Text(
+                                SizedBox(
+                                  width: 30,
+                                ),
+                                GestureDetector(
+                                  onTap: () {
+                                  bool response =formkey.currentState!.validate();
+                                  if(response)
+                                    {
+                                      email=txtEmail.text;
+                                      Navigator.of(context).pushNamed('/pass');
+                                    }
+                                  },
+                                  child: Container(
+                                    height: 38,
+                                    width: 80,
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(25),
+                                        color: Color(0xff125DCB)),
+                                    child: Center(
+                                      child: Text(
                                         'Next',
-                                        style: TextStyle(color: Colors.white),
+                                        style: TextStyle(
+                                            fontSize: 15, color: Colors.white),
                                       ),
                                     ),
                                   ),
-                                )
+                                ),
                               ],
                             ),
                           ],
                         ),
-                      ],
+                      ),
                     ),
-                  ),
+                  ],
                 ),
-              ],
-            ),
+              ),
+            )
           ],
         ),
       ),
