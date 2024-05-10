@@ -106,7 +106,7 @@ height=22% >
 <h3 align = "center"> 3. Login Page </h3>
 
 <p align = "center">
-<img src= "https://github.com/Yash-978/resume_app_daily_task/assets/147479013/29694b63-a667-4f01-a199-689539a34949" width=35%
+<img src= "https://github.com/Yash-978/resume_app_daily_task/assets/147479013/4c014893-c6f7-4e47-878e-4b1839e7dd79" width=35%
 height=22% >
 </p>
 
