@@ -13,9 +13,9 @@ class AppRoutes
   static Map<String,Widget Function(BuildContext)>routes={
     // '/':(context)=>statusAndappBar(),
     // '/':(context)=>GmailDrawer(),
-    // '/':(context)=>EntryScreen(),
-    '/':(context)=>gmailValidationChrome(),
-    // '/login':(context)=>LoginPage(),
+    '/':(context)=>EntryScreen(),
+    // '/':(context)=>gmailValidationChrome(),
+    '/login':(context)=>LoginPage(),
 
 
   };

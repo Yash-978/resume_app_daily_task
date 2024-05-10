@@ -19,65 +19,123 @@ class _gmailValidationChromeState extends State<gmailValidationChrome> {
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           Container(
-            height: 500,
-            width: 900,
+            height: 300,
+            width: double.infinity,
             decoration: BoxDecoration(
               color: Colors.white,
             ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Row(
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Container(
                       height: 50,
                       width: 50,
                       decoration: BoxDecoration(
-                        image: DecorationImage(
-                          image: AssetImage('Assets/Images/download (2).png'),
-                        ),
-                      ),
+                          image: DecorationImage(
+                        image: AssetImage('Assets/Images/download (2).png'),
+                      )),
                     ),
-                  ],
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
                     Text(
                       'Sign in',
-                      style: TextStyle(
-                        fontSize: 25,
-                      ),
+                      style: TextStyle(fontSize: 25),
                     ),
-                    TextField(
-                      decoration: InputDecoration(
-                        enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                          color: Colors.black,
-                        )),
-                        focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                          color: Colors.red,
-                        )),
-                      ),
-                    )
+                    Text(
+                      'Use your Google Account',
+                      style: TextStyle(fontSize: 10),
+                    ),
                   ],
                 ),
-                // TextField(
-                //   decoration: InputDecoration(
-                //     enabledBorder: OutlineInputBorder(
-                //         borderSide: BorderSide(
-                //           color: Colors.black,
-                //         )),
-                //     focusedBorder: OutlineInputBorder(
-                //         borderSide: BorderSide(
-                //           color: Colors.red,
-                //         )),
-                //   ),
-                // )
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    SizedBox(height: 50,),
+                    SizedBox(
+                      width: 400,
+                      height: 90,
+                      child: TextField(
+                        decoration: InputDecoration(
+                            enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Colors.black,
+                              ),
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Color(0xffE54335),
+                              ),
+                            ),
+                            hintText: 'Email or phone',
+                            hintStyle: TextStyle(fontSize: 15)),
+                      ),
+                    ),
+                    Row(mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Forgot email?',
+                          style: TextStyle(
+                              color: Color(0xff0A58D0),
+                              fontSize: 10,
+                              fontWeight: FontWeight.bold),
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: 10,),
+                    Row(
+                      children: [
+                        Text(
+                          'Not your computer? Use Guest mode to sign in privetely. ',
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 10,
+                          ),
+                        ),
+                        Text(
+                          'Learn more',
+                          style: TextStyle(
+                              color: Color(0xff0A58D0),
+                              fontSize: 10,
+                              fontWeight: FontWeight.w800),
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: 10,),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        Text(
+                          'Create account',
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 10,
+                          ),
+                        ),
+                        SizedBox(width: 15,),
+                        Container(
+                          height: 35,
+                          width: 80,
+                          decoration: BoxDecoration(
+                              color: Color(0xff0A58D0),
+                              borderRadius: BorderRadius.circular(20)),
+                          child: Center(
+                            child: Text(
+                              'Next',
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.w100),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                )
               ],
             ),
-          )
+          ),
         ],
       ),
     ));

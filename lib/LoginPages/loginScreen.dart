@@ -177,7 +177,15 @@ class _LoginPageState extends State<LoginPage> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Icon(Icons.apple_sharp,size: 30,),
+                      Container(
+                        height: 40,
+                        width: 40,
+                        decoration: BoxDecoration(
+                            image: DecorationImage(
+                              image: AssetImage('Assets/Images/download (2).png'),
+                            )),
+                      ),
+                      // Icon(Icons.apple_sharp,size: 30,),
                       SizedBox(width: 5,),
                       Text(
                         'Sign-In with Google',
