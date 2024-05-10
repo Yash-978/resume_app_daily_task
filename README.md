@@ -110,5 +110,16 @@ height=22% >
 height=22% >
 </p>
 
+<h3 align = "center"> 3.1. Login Page </h3>
+<div align = "center">
+<video src= "https://github.com/Yash-978/resume_app_daily_task/assets/147479013/f6552d63-0614-4198-85aa-53344d635cf2" width=35%
+height=22% >
+</div>
+
+
+
+
+
+
 
 
