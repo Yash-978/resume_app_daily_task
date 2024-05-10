@@ -5,6 +5,7 @@ import 'package:flutter/cupertino.dart';
 
 import '../GmailDrawer/gmailDrawer.dart';
 import '../Google/gmail.dart';
+import '../Google/passwordScreen.dart';
 import '../LoginPages/EntryScreen.dart';
 import '../LoginPages/loginScreen.dart';
 
@@ -13,9 +14,11 @@ class AppRoutes
   static Map<String,Widget Function(BuildContext)>routes={
     // '/':(context)=>statusAndappBar(),
     // '/':(context)=>GmailDrawer(),
-    '/':(context)=>EntryScreen(),
-    // '/':(context)=>gmailValidationChrome(),
-    '/login':(context)=>LoginPage(),
+    // '/':(context)=>EntryScreen(),
+
+    // '/login':(context)=>LoginPage(),
+    '/':(context)=>gmailValidationChrome(),
+    '/pass':(context)=>passWordScreen(),
 
 
   };

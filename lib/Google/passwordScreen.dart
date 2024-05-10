@@ -1,22 +1,19 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-
-class gmailValidationChrome extends StatefulWidget {
-  const gmailValidationChrome({super.key});
+class passWordScreen extends StatefulWidget {
+  const passWordScreen({super.key});
 
   @override
-  State<gmailValidationChrome> createState() => _gmailValidationChromeState();
+  State<passWordScreen> createState() => _passWordScreenState();
 }
 
-class _gmailValidationChromeState extends State<gmailValidationChrome> {
+class _passWordScreenState extends State<passWordScreen> {
   @override
   Widget build(BuildContext context) {
-    TextEditingController txtEmail = TextEditingController();
+    TextEditingController txtPassword = TextEditingController();
     GlobalKey<FormState> formkey =GlobalKey();
 
     return Scaffold(
-      backgroundColor: const Color(0xfff0f4f8),
+      backgroundColor: Color(0xfff0f4f8),
       body: Form(
         key: formkey,
         child: Column(
@@ -98,27 +95,19 @@ class _gmailValidationChromeState extends State<gmailValidationChrome> {
                     child: Column(
                       children: [
                         TextFormField(
-                          validator: (value) {
+                          validator: (value){
                             if(value!.isEmpty)
                             {
-                              return ' please enter @gmail';
-                            }
-                            else if(!value.contains('@gmail.com'))
-                            {
-                              return 'invalid Email ID';
-                            }
-                            else if(value.toString()=='@gmail.com')
-                            {
-                              return 'xyz@gmail.com';
+                              return 'Password is required';
                             }
                           },
-                          controller: txtEmail,
+                          controller: txtPassword,
+                          obscureText: true,
                           decoration: InputDecoration(
-                            labelText: 'Email or Phone',
+                            labelText: 'Password',
                             labelStyle: const TextStyle(
                               color: Colors.blue,
                             ),
-                            hintText: 'xyz123@gmail.com',
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(4),
                             ),
@@ -129,9 +118,9 @@ class _gmailValidationChromeState extends State<gmailValidationChrome> {
                             Padding(
                               padding: EdgeInsets.only(top: 8),
                               child: Text(
-                                'Email?',
+                                'Forgot Password?',
                                 style: TextStyle(
-                                    color: Color(0xff0A5DCC),
+                                    color: Colors.deepPurple,
                                     fontWeight: FontWeight.w600,
                                     fontSize: 13),
                               ),
@@ -178,27 +167,23 @@ class _gmailValidationChromeState extends State<gmailValidationChrome> {
                                   ),
                                 ),
                                 const SizedBox(width: 25),
-                                Padding(
-                                  padding:
-                                  const EdgeInsets.only(top: 25, right: 5),
-                                  child: GestureDetector(
-                                    onTap: () {
-                                      bool response = formkey.currentState!.validate();
-                                      if(response)
-                                      {
-                                        Navigator.of(context).pushNamed('/pass');
-                                      }
-                                    },
+                                GestureDetector(
+                                  onTap: () {
+                                    Navigator.of(context).pushNamed('/Succese');
+                                  },
+                                  child: Padding(
+                                    padding:
+                                    const EdgeInsets.only(top: 25, right: 5),
                                     child: Container(
                                       alignment: Alignment.center,
                                       height: 40,
                                       width: 76,
                                       decoration: BoxDecoration(
-                                        color: const Color(0xff0a58d0),
+                                        color: Color(0xff0a58d0),
                                         borderRadius: BorderRadius.circular(30),
                                       ),
-                                      child: const Text(
-                                        'Next',
+                                      child: Text(
+                                        'Sign in',
                                         style: TextStyle(color: Colors.white),
                                       ),
                                     ),
@@ -220,3 +205,4 @@ class _gmailValidationChromeState extends State<gmailValidationChrome> {
     );
   }
 }
+
