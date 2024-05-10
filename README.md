@@ -88,3 +88,27 @@ The SystemChrome class is used to set the status bar color. This is done by usin
 }
 
 ```
+<h3 align = "center"> 1. Gmail Drawer </h3>
+
+<p align = "center">
+<img src= "https://github.com/Yash-978/resume_app_daily_task/assets/147479013/0d504eac-a099-4d3e-806e-0137fd6a21b3" width=35%
+height=22% >
+</p>
+
+
+<h3 align = "center"> 2. Entry Page </h3>
+
+<p align = "center">
+<img src= "https://github.com/Yash-978/resume_app_daily_task/assets/147479013/b7672a1f-559b-4820-ba9a-17ec3e618d59" width=35%
+height=22% >
+</p>
+
+<h3 align = "center"> 3. Login Page </h3>
+
+<p align = "center">
+<img src= "https://github.com/Yash-978/resume_app_daily_task/assets/147479013/29694b63-a667-4f01-a199-689539a34949" width=35%
+height=22% >
+</p>
+
+
+
