@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:resume_app_daily_task/GmailDrawer/list.dart';
+
 class passWordScreen extends StatefulWidget {
   const passWordScreen({super.key});
 
@@ -89,16 +90,18 @@ class _passWordScreenState extends State<passWordScreen> {
                               height: 80,
                             ),
                             SizedBox(
-                              height: 50,
+                              height: 70,
                               child: TextFormField(
                                 // onChanged: (value) {
                                 //   setState(() {
-                                //     email = value;
+                                //     pass = value;
                                 //   });
                                 // },
                                 validator: (value) {
                                   if (value!.isEmpty) {
                                     return 'Enter a valid password';
+                                  } else {
+                                    return null;
                                   }
                                 },
                                 controller: txtpass,
@@ -107,10 +110,16 @@ class _passWordScreenState extends State<passWordScreen> {
                                   hintText: 'Password',
                                   enabledBorder: OutlineInputBorder(
                                       borderSide: BorderSide(
+                                    color: Colors.black,
+                                  )),
+                                  labelText: 'ABC@1234',
+                                  border: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(4),
+                                      borderSide: BorderSide(
                                         color: Colors.black,
                                       )),
-                                  labelText: 'ABC@1234',
                                   focusedBorder: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(4),
                                     borderSide: BorderSide(
                                       color: Colors.red,
                                     ),
@@ -118,7 +127,6 @@ class _passWordScreenState extends State<passWordScreen> {
                                 ),
                               ),
                             ),
-
                             SizedBox(
                               height: 7,
                             ),
@@ -174,10 +182,17 @@ class _passWordScreenState extends State<passWordScreen> {
                                 GestureDetector(
                                   onTap: () {
                                     bool response =
-                                    formkey.currentState!.validate();
+                                        formkey.currentState!.validate();
                                     if (response) {
                                       pass = txtpass.text;
-                                      Navigator.of(context).pushNamed('/pass');
+                                      ScaffoldMessenger.of(context)
+                                          .showSnackBar(SnackBar(
+                                        content: Text('Login Successfuly'),
+                                        duration: Duration(seconds: 5),
+                                        backgroundColor: Color(0xffE44139),
+                                      ));
+                                      Navigator.of(context)
+                                          .pushNamed('/verified');
                                     }
                                   },
                                   child: Container(

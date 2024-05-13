@@ -6,6 +6,7 @@ import 'package:flutter/cupertino.dart';
 import '../GmailDrawer/gmailDrawer.dart';
 import '../Google/gmail.dart';
 import '../Google/passwordScreen.dart';
+import '../Google/verifcationScreen.dart';
 import '../LoginPages/EntryScreen.dart';
 import '../LoginPages/loginScreen.dart';
 
@@ -19,6 +20,7 @@ class AppRoutes
     // '/login':(context)=>LoginPage(),
     '/':(context)=>gmailValidationChrome(),
     '/pass':(context)=>passWordScreen(),
+    '/verified':(context)=>verifiedsuccessful(),
 
 
   };

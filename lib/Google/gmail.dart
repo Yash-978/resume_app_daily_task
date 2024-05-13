@@ -13,6 +13,8 @@ class gmailValidationChrome extends StatefulWidget {
 class _gmailValidationChromeState extends State<gmailValidationChrome> {
   @override
   Widget build(BuildContext context) {
+    double h=MediaQuery.of(context).size.height;
+    double w=MediaQuery.of(context).size.width;
     TextEditingController txtEmail = TextEditingController();
     GlobalKey<FormState> formkey = GlobalKey();
 
@@ -25,8 +27,8 @@ class _gmailValidationChromeState extends State<gmailValidationChrome> {
           children: [
             Center(
               child: Container(
-                height: 300,
-                width: 950,
+                height: 300,//300
+                width: 950,//950
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(15),
                     color: Colors.white),
@@ -92,7 +94,7 @@ class _gmailValidationChromeState extends State<gmailValidationChrome> {
                               height: 80,
                             ),
                             SizedBox(
-                              height: 50,
+                              height: 70,
                               child: TextFormField(
                                 // onChanged: (value) {
                                 //   setState(() {
@@ -104,13 +106,16 @@ class _gmailValidationChromeState extends State<gmailValidationChrome> {
                                     return 'Please Enter Valid Email';
                                   } else if (!value.contains('@gmail.com')) {
                                     return 'Enter @gmail.com';
-                                  } else if (value.toString() == '@gmail.com') {
-                                    return 'abc123@gmail.com';
                                   }
                                 },
                                 controller: txtEmail,
                                 decoration: InputDecoration(
                                   hintText: 'Email or phone',
+                                  border: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(4),
+                                      borderSide: BorderSide(
+                                        color: Colors.black,
+                                      )),
                                   enabledBorder: OutlineInputBorder(
                                       borderSide: BorderSide(
                                     color: Colors.black,
@@ -124,33 +129,6 @@ class _gmailValidationChromeState extends State<gmailValidationChrome> {
                                 ),
                               ),
                             ),
-                            // TextFormField(
-                            //   validator: (value) {
-                            //     if(value!.isEmpty)
-                            //     {
-                            //       return ' please enter @gmail';
-                            //     }
-                            //     else if(!value.contains('@gmail.com'))
-                            //     {
-                            //       return 'invalid Email ID';
-                            //     }
-                            //     else if(value.toString()=='@gmail.com')
-                            //     {
-                            //       return 'xyz@gmail.com';
-                            //     }
-                            //   },
-                            //   controller: txtEmail,
-                            //   decoration: InputDecoration(
-                            //     labelText: 'Email or Phone',
-                            //     labelStyle: const TextStyle(
-                            //       color: Colors.blue,
-                            //     ),
-                            //     hintText: 'xyz123@gmail.com',
-                            //     border: OutlineInputBorder(
-                            //       borderRadius: BorderRadius.circular(4),
-                            //     ),
-                            //   ),
-                            // ),
                             SizedBox(
                               height: 7,
                             ),
