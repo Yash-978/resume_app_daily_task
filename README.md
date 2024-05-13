@@ -116,6 +116,15 @@ height=22% >
 height=22% >
 </div>
 
+<p align = "center">
+<img src= "https://github.com/Yash-978/resume_app_daily_task/assets/147479013/8c1a0eae-ec37-497b-9a87-3f778c46a5d9" width=35%
+height=22% >
+</p>
+
+<p align = "center">
+<img src= "https://github.com/Yash-978/resume_app_daily_task/assets/147479013/a51a4302-f801-403a-9f5a-a67800bac8f9" width=35%
+height=22% >
+</p>
 
 
 
