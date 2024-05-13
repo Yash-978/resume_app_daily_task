@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -30,7 +28,8 @@ class _gmailValidationChromeState extends State<gmailValidationChrome> {
                 height: 300,
                 width: 950,
                 decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(15), color: Colors.white),
+                    borderRadius: BorderRadius.circular(15),
+                    color: Colors.white),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
@@ -95,36 +94,63 @@ class _gmailValidationChromeState extends State<gmailValidationChrome> {
                             SizedBox(
                               height: 50,
                               child: TextFormField(
-                                onChanged: (value) {
-
-                                  setState(() {
-                                    email=value;
-                                  });
+                                // onChanged: (value) {
+                                //   setState(() {
+                                //     email = value;
+                                //   });
+                                // },
+                                validator: (value) {
+                                  if (value!.isEmpty) {
+                                    return 'Please Enter Valid Email';
+                                  } else if (!value.contains('@gmail.com')) {
+                                    return 'Enter @gmail.com';
+                                  } else if (value.toString() == '@gmail.com') {
+                                    return 'abc123@gmail.com';
+                                  }
                                 },
-                                validator: (value){
-                                  if(value!.isEmpty) {
-                                      return 'Please Enter Valid Email';
-                                    }
-                                  else if(value.length>11)
-                                    {
-                                      return 'Value Must be Greater Than 11 ';
-                                    }
-                                  else if(!value.contains('@gmail.com'))
-                                    {
-                                      return 'Enter @gmail.com';
-                                    }
-                                },
-                                  decoration: InputDecoration(
-                                      hintText: 'Email or phone',
-                                      enabledBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                        color: Colors.black,
-                                      )),
-                                      focusedBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                        color: Colors.red,
-                                      )))),
+                                controller: txtEmail,
+                                decoration: InputDecoration(
+                                  hintText: 'Email or phone',
+                                  enabledBorder: OutlineInputBorder(
+                                      borderSide: BorderSide(
+                                    color: Colors.black,
+                                  )),
+                                  labelText: 'xyz123@gmail.com',
+                                  focusedBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(
+                                      color: Colors.red,
+                                    ),
+                                  ),
+                                ),
+                              ),
                             ),
+                            // TextFormField(
+                            //   validator: (value) {
+                            //     if(value!.isEmpty)
+                            //     {
+                            //       return ' please enter @gmail';
+                            //     }
+                            //     else if(!value.contains('@gmail.com'))
+                            //     {
+                            //       return 'invalid Email ID';
+                            //     }
+                            //     else if(value.toString()=='@gmail.com')
+                            //     {
+                            //       return 'xyz@gmail.com';
+                            //     }
+                            //   },
+                            //   controller: txtEmail,
+                            //   decoration: InputDecoration(
+                            //     labelText: 'Email or Phone',
+                            //     labelStyle: const TextStyle(
+                            //       color: Colors.blue,
+                            //     ),
+                            //     hintText: 'xyz123@gmail.com',
+                            //     border: OutlineInputBorder(
+                            //       borderRadius: BorderRadius.circular(4),
+                            //     ),
+                            //   ),
+                            // ),
                             SizedBox(
                               height: 7,
                             ),
@@ -179,10 +205,10 @@ class _gmailValidationChromeState extends State<gmailValidationChrome> {
                                 ),
                                 GestureDetector(
                                   onTap: () {
-                                  bool response =formkey.currentState!.validate();
-                                  if(response)
-                                    {
-                                      email=txtEmail.text;
+                                    bool response =
+                                        formkey.currentState!.validate();
+                                    if (response) {
+                                      email = txtEmail.text;
                                       Navigator.of(context).pushNamed('/pass');
                                     }
                                   },

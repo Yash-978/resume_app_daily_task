@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:resume_app_daily_task/GmailDrawer/list.dart';
 class passWordScreen extends StatefulWidget {
   const passWordScreen({super.key});
 
@@ -9,200 +10,204 @@ class passWordScreen extends StatefulWidget {
 class _passWordScreenState extends State<passWordScreen> {
   @override
   Widget build(BuildContext context) {
-    TextEditingController txtPassword = TextEditingController();
-    GlobalKey<FormState> formkey =GlobalKey();
+    TextEditingController txtpass = TextEditingController();
+    GlobalKey<FormState> formkey = GlobalKey();
 
     return Scaffold(
-      backgroundColor: Color(0xfff0f4f8),
+      backgroundColor: Color(0xffF0F4F8),
       body: Form(
         key: formkey,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container(
-                  height: 330,
-                  width: 450,
-                  decoration: const BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(15),
-                        bottomLeft: Radius.circular(15)),
-                  ),
-                  child: Column(
-                    children: [
-                      Container(
-                        margin: const EdgeInsets.only(left: 10, top: 10),
-                        child: Row(
+            Center(
+              child: Container(
+                height: 300,
+                width: 950,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(15),
+                    color: Colors.white),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Container(
+                        height: 250,
+                        width: 400,
+                        child: Column(
+                          // mainAxisAlignment: MainAxisAlignment.start,
                           children: [
-                            Image.asset(
-                              'Assets/Images/download (2).png',
-                              height: 62,
+                            // SizedBox(height: 40,),
+                            Align(
+                              alignment: Alignment.topLeft,
+                              child: Container(
+                                height: 50,
+                                width: 50,
+                                decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                        image: AssetImage(
+                                            'Assets/Images/download (2).png'))),
+                              ),
+                            ),
+                            SizedBox(
+                              height: 5,
+                            ),
+
+                            Align(
+                              alignment: Alignment.topLeft,
+                              child: Text(
+                                'Sign-in',
+                                style: TextStyle(
+                                    fontSize: 25, fontWeight: FontWeight.w500),
+                              ),
+                            ),
+                            SizedBox(
+                              height: 5,
+                            ),
+                            Align(
+                              alignment: Alignment.topLeft,
+                              child: Text(
+                                'Use your Google Account',
+                                style: TextStyle(
+                                  fontSize: 15,
+                                ),
+                              ),
                             ),
                           ],
                         ),
                       ),
-                      const SizedBox(height: 10),
-                      const SizedBox(
-                        width: 13,
-                      ),
-                      Container(
-                        margin: const EdgeInsets.only(left: 20),
-                        child: const Row(
-                          children: [
-                            Text(
-                              'Sign in',
-                              style: TextStyle(
-                                  fontSize: 39, fontWeight: FontWeight.w600),
-                            ),
-                          ],
-                        ),
-                      ),
-                      const SizedBox(
-                        height: 12,
-                      ),
-                      const Row(
-                        children: [
-                          Padding(
-                            padding: EdgeInsets.only(left: 20),
-                            child: Text(
-                              'Use your Google Account',
-                              style: TextStyle(
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.w800,
-                                  color: Color(0xff404040)),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
-                Container(
-                  height: 330,
-                  width: 450,
-                  decoration: const BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.only(
-                      topRight: Radius.circular(15),
-                      bottomRight: Radius.circular(15),
                     ),
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.only(top: 85, left: 15, right: 15),
-                    child: Column(
-                      children: [
-                        TextFormField(
-                          validator: (value){
-                            if(value!.isEmpty)
-                            {
-                              return 'Password is required';
-                            }
-                          },
-                          controller: txtPassword,
-                          obscureText: true,
-                          decoration: InputDecoration(
-                            labelText: 'Password',
-                            labelStyle: const TextStyle(
-                              color: Colors.blue,
-                            ),
-                            border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(4),
-                            ),
-                          ),
-                        ),
-                        const Row(
+                    Container(
+                      height: 350,
+                      width: 490,
+                      child: Padding(
+                        padding: const EdgeInsets.only(right: 16),
+                        child: Column(
                           children: [
-                            Padding(
-                              padding: EdgeInsets.only(top: 8),
+                            SizedBox(
+                              height: 80,
+                            ),
+                            SizedBox(
+                              height: 50,
+                              child: TextFormField(
+                                // onChanged: (value) {
+                                //   setState(() {
+                                //     email = value;
+                                //   });
+                                // },
+                                validator: (value) {
+                                  if (value!.isEmpty) {
+                                    return 'Enter a valid password';
+                                  }
+                                },
+                                controller: txtpass,
+                                obscureText: true,
+                                decoration: InputDecoration(
+                                  hintText: 'Password',
+                                  enabledBorder: OutlineInputBorder(
+                                      borderSide: BorderSide(
+                                        color: Colors.black,
+                                      )),
+                                  labelText: 'ABC@1234',
+                                  focusedBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(
+                                      color: Colors.red,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+
+                            SizedBox(
+                              height: 7,
+                            ),
+                            Align(
+                              alignment: Alignment.topLeft,
                               child: Text(
                                 'Forgot Password?',
                                 style: TextStyle(
-                                    color: Colors.deepPurple,
+                                    fontSize: 15,
                                     fontWeight: FontWeight.w600,
-                                    fontSize: 13),
+                                    color: Color(0xff125DCB)),
                               ),
                             ),
-                          ],
-                        ),
-                        const Row(
-                          children: [
-                            Padding(
-                              padding: EdgeInsets.only(top: 50),
-                              child: Text(
-                                'Not your computer? Use guest mode to sign in privately.',
-                                style: TextStyle(
-                                    fontWeight: FontWeight.w600, fontSize: 13),
+                            SizedBox(
+                              height: 30,
+                            ),
+                            Align(
+                              alignment: Alignment.topLeft,
+                              child: Row(
+                                children: [
+                                  Text(
+                                    'Not your Computer? Use Guest mode to sign in privetely.',
+                                    style: TextStyle(
+                                      fontSize: 12,
+                                    ),
+                                  ),
+                                  Text(
+                                    'Learn more',
+                                    style: TextStyle(
+                                        fontSize: 12,
+                                        color: Color(0xff125DCB),
+                                        fontWeight: FontWeight.w700),
+                                  ),
+                                ],
                               ),
                             ),
-                            Padding(
-                              padding: EdgeInsets.only(top: 50),
-                              child: Text(
-                                ' Learn more',
-                                style: TextStyle(
-                                  color: Colors.deepPurple,
-                                  fontWeight: FontWeight.w600,
-                                  fontSize: 13,
-                                ),
-                              ),
-                            )
-                          ],
-                        ),
-                        Column(
-                          children: [
+                            SizedBox(
+                              height: 30,
+                            ),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.end,
                               children: [
-                                const Padding(
-                                  padding: EdgeInsets.only(top: 30),
-                                  child: Text(
-                                    'Create account',
-                                    style: TextStyle(
-                                        letterSpacing: 0.5,
-                                        color: Colors.deepPurple,
-                                        fontSize: 14,
-                                        fontWeight: FontWeight.w600),
-                                  ),
+                                Text(
+                                  'Create account',
+                                  style: TextStyle(
+                                      fontSize: 15,
+                                      color: Color(0xff125DCB),
+                                      fontWeight: FontWeight.w500),
                                 ),
-                                const SizedBox(width: 25),
+                                SizedBox(
+                                  width: 30,
+                                ),
                                 GestureDetector(
                                   onTap: () {
-                                    Navigator.of(context).pushNamed('/Succese');
+                                    bool response =
+                                    formkey.currentState!.validate();
+                                    if (response) {
+                                      pass = txtpass.text;
+                                      Navigator.of(context).pushNamed('/pass');
+                                    }
                                   },
-                                  child: Padding(
-                                    padding:
-                                    const EdgeInsets.only(top: 25, right: 5),
-                                    child: Container(
-                                      alignment: Alignment.center,
-                                      height: 40,
-                                      width: 76,
-                                      decoration: BoxDecoration(
-                                        color: Color(0xff0a58d0),
-                                        borderRadius: BorderRadius.circular(30),
-                                      ),
+                                  child: Container(
+                                    height: 38,
+                                    width: 80,
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(25),
+                                        color: Color(0xff125DCB)),
+                                    child: Center(
                                       child: Text(
-                                        'Sign in',
-                                        style: TextStyle(color: Colors.white),
+                                        'Next',
+                                        style: TextStyle(
+                                            fontSize: 15, color: Colors.white),
                                       ),
                                     ),
                                   ),
-                                )
+                                ),
                               ],
                             ),
                           ],
                         ),
-                      ],
+                      ),
                     ),
-                  ),
+                  ],
                 ),
-              ],
-            ),
+              ),
+            )
           ],
         ),
       ),
     );
   }
 }
-
