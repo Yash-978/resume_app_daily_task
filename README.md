@@ -115,7 +115,7 @@ height=22% >
 <video src= "https://github.com/Yash-978/resume_app_daily_task/assets/147479013/f6552d63-0614-4198-85aa-53344d635cf2" width=35%
 height=22% >
 </div>
-
+<h3 align = "center"> Gamil verification </h3>
 <p align = "center">
 <img src= "https://github.com/Yash-978/resume_app_daily_task/assets/147479013/8c1a0eae-ec37-497b-9a87-3f778c46a5d9" width=35%
 height=22% >
@@ -125,6 +125,14 @@ height=22% >
 <img src= "https://github.com/Yash-978/resume_app_daily_task/assets/147479013/a51a4302-f801-403a-9f5a-a67800bac8f9" width=35%
 height=22% >
 </p>
+
+
+<div align = "center">
+<video src= "https://github.com/Yash-978/resume_app_daily_task/assets/147479013/4d853294-1976-49ce-9d72-a76d7a7b3a43" width=35%
+height=22% >
+</div>
+
+
 
 
 
