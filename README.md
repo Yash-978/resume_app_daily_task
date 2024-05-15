@@ -145,5 +145,13 @@ height=22% >
 <img src= "https://github.com/Yash-978/resume_app_daily_task/assets/147479013/77798450-c109-4a52-a4f3-0851d29c5203" width=35%
 height=22% >
 </p>
+<h3 align = "center"> 7. Image Picker </h3>
+<div align = "center">
+<video src= "https://github.com/Yash-978/resume_app_daily_task/assets/147479013/ff8fc12b-f32c-477d-957c-24092fa3e2ad" width=35%
+height=22% >
+</div>
+
+
+
 
 
