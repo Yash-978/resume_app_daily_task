@@ -33,6 +33,7 @@ void main() {
 
 *  In Flutter and Dart, a map is a collection of data in key-value pairs.
 
+
 `Generics`:
 
 Generics in Dart provide a way to write reusable code that can work with different types. They allow you to define classes, functions, and interfaces that can operate on a variety of data types without sacrificing type safety. Generics are denoted by using angle brackets < > and a type parameter.
@@ -115,7 +116,7 @@ height=22% >
 <video src= "https://github.com/Yash-978/resume_app_daily_task/assets/147479013/f6552d63-0614-4198-85aa-53344d635cf2" width=35%
 height=22% >
 </div>
-
+<h3 align = "center"> 4. Gmail verification </h3>
 <p align = "center">
 <img src= "https://github.com/Yash-978/resume_app_daily_task/assets/147479013/8c1a0eae-ec37-497b-9a87-3f778c46a5d9" width=35%
 height=22% >
@@ -127,6 +128,28 @@ height=22% >
 </p>
 
 
+<div align = "center">
+<video src= "https://github.com/Yash-978/resume_app_daily_task/assets/147479013/4d853294-1976-49ce-9d72-a76d7a7b3a43" width=35%
+height=22% >
+</div>
+
+<h3 align = "center"> 5. Image Picker Gallery </h3>
+<p align = "center">
+<img src= "https://github.com/Yash-978/resume_app_daily_task/assets/147479013/749ca375-d6cd-470b-a415-20a36cf8d59b" width=35%
+height=22% >
+</p>
+
+
+<h3 align = "center"> 6. Image Picker Camera </h3>
+<p align = "center">
+<img src= "https://github.com/Yash-978/resume_app_daily_task/assets/147479013/77798450-c109-4a52-a4f3-0851d29c5203" width=35%
+height=22% >
+</p>
+<h3 align = "center"> 7. Image Picker </h3>
+<div align = "center">
+<video src= "https://github.com/Yash-978/resume_app_daily_task/assets/147479013/ff8fc12b-f32c-477d-957c-24092fa3e2ad" width=35%
+height=22% >
+</div>
 
 
 
