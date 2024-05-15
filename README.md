@@ -132,7 +132,11 @@ height=22% >
 height=22% >
 </div>
 
-
+<h3 align = "center"> 5. Image Picker </h3>
+<p align = "center">
+<img src= "https://github.com/Yash-978/resume_app_daily_task/assets/147479013/749ca375-d6cd-470b-a415-20a36cf8d59b" width=35%
+height=22% >
+</p>
 
 
 
