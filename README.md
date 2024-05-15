@@ -33,6 +33,7 @@ void main() {
 
 *  In Flutter and Dart, a map is a collection of data in key-value pairs.
 
+
 `Generics`:
 
 Generics in Dart provide a way to write reusable code that can work with different types. They allow you to define classes, functions, and interfaces that can operate on a variety of data types without sacrificing type safety. Generics are denoted by using angle brackets < > and a type parameter.
@@ -132,15 +133,17 @@ height=22% >
 height=22% >
 </div>
 
-<h3 align = "center"> 5. Image Picker </h3>
+<h3 align = "center"> 5. Image Picker Gallery </h3>
 <p align = "center">
 <img src= "https://github.com/Yash-978/resume_app_daily_task/assets/147479013/749ca375-d6cd-470b-a415-20a36cf8d59b" width=35%
 height=22% >
 </p>
 
 
-
-
-
+<h3 align = "center"> 6. Image Picker Camera </h3>
+<p align = "center">
+<img src= "https://github.com/Yash-978/resume_app_daily_task/assets/147479013/77798450-c109-4a52-a4f3-0851d29c5203" width=35%
+height=22% >
+</p>
 
 
