@@ -7,6 +7,7 @@ import '../GmailDrawer/gmailDrawer.dart';
 import '../Google/gmail.dart';
 import '../Google/passwordScreen.dart';
 import '../Google/verifcationScreen.dart';
+import '../ImagePicker/imagePicker.dart';
 import '../LoginPages/EntryScreen.dart';
 import '../LoginPages/loginScreen.dart';
 
@@ -18,9 +19,10 @@ class AppRoutes
     // '/':(context)=>EntryScreen(),
 
     // '/login':(context)=>LoginPage(),
-    '/':(context)=>gmailValidationChrome(),
-    '/pass':(context)=>passWordScreen(),
-    '/verified':(context)=>verifiedsuccessful(),
+    // '/':(context)=>gmailValidationChrome(),
+    // '/pass':(context)=>passWordScreen(),
+    // '/verified':(context)=>verifiedsuccessful(),
+    '/':(context)=>UploadImagePicker(),
 
 
   };
