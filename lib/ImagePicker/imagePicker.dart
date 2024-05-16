@@ -33,12 +33,13 @@ class _UploadImagePickerState extends State<UploadImagePicker> {
               height: 350,
               width: 350,
               decoration: BoxDecoration(
-                  image: (fileimage != null)
-                      ? DecorationImage(image: FileImage(fileimage!),fit: BoxFit.cover)
-                      : null,
-                  color: Colors.blue,
-
-                  ),
+                image: (fileimage != null)
+                    ? DecorationImage(
+                        image: FileImage(fileimage!), fit: BoxFit.cover)
+                    : DecorationImage(
+                        image: AssetImage('Assets/Images/Sample_User_Icon.png'), fit: BoxFit.cover),
+                // color: Colors.blue,
+              ),
             ),
           ),
           Row(
