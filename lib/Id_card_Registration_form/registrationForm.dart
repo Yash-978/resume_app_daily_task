@@ -231,6 +231,9 @@ class _RegistrationFormState extends State<RegistrationForm> {
   }
 }
 
+
+
+
 // bool gender=false;
 String name = '';
 String surname = '';
