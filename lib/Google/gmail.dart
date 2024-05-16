@@ -17,6 +17,17 @@ class _gmailValidationChromeState extends State<gmailValidationChrome> {
     double w=MediaQuery.of(context).size.width;
     TextEditingController txtEmail = TextEditingController();
     GlobalKey<FormState> formkey = GlobalKey();
+   /*
+      String? validatepass(String? validateEmail){
+     RegExp emailRegex= RegExp(r'^[\w\.-]+@[\w-]+\.\w{2,3}(\.\w{2,3})?$');
+      var isEmailValid=emailRegex.hasMatch(validateEmail ?? '');
+      if(!isEmailValid)
+      {
+        return 'Please Enter a Valid Email';
+      }
+      return null;
+    }
+    */
 
     return Scaffold(
       backgroundColor: Color(0xffF0F4F8),

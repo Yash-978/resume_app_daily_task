@@ -7,6 +7,7 @@ import '../GmailDrawer/gmailDrawer.dart';
 import '../Google/gmail.dart';
 import '../Google/passwordScreen.dart';
 import '../Google/verifcationScreen.dart';
+import '../Id_card_Registration_form/registrationForm.dart';
 import '../ImagePicker/imagePicker.dart';
 import '../LoginPages/EntryScreen.dart';
 import '../LoginPages/loginScreen.dart';
@@ -22,7 +23,7 @@ class AppRoutes
     // '/':(context)=>gmailValidationChrome(),
     // '/pass':(context)=>passWordScreen(),
     // '/verified':(context)=>verifiedsuccessful(),
-    '/':(context)=>UploadImagePicker(),
+    '/':(context)=>RegistrationForm(),
 
 
   };
