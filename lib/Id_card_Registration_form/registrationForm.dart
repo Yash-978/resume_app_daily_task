@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:resume_app_daily_task/GmailDrawer/list.dart';
 
 import '../globalList_And_Variables.dart';
 
@@ -23,8 +24,10 @@ class _RegistrationFormState extends State<RegistrationForm> {
   Widget build(BuildContext context) {
     TextEditingController txtname = TextEditingController();
     TextEditingController txtsurname = TextEditingController();
-    TextEditingController txtmobile = TextEditingController();
+    TextEditingController txtmobile = TextEditingController(text: '+91');
     TextEditingController txtemail = TextEditingController();
+    TextEditingController txtaddress = TextEditingController();
+
     GlobalKey<FormState> formkey = GlobalKey();
     return Scaffold(
       appBar: AppBar(
@@ -41,24 +44,9 @@ class _RegistrationFormState extends State<RegistrationForm> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              // Center(
-              //   child: Container(
-              //     height: 350,
-              //     width: 350,
-              //     decoration: BoxDecoration(
-              //       image: (fileimage != null)
-              //           ? DecorationImage(
-              //           image: FileImage(fileimage!), fit: BoxFit.cover)
-              //           : const DecorationImage(
-              //           image: AssetImage('Assets/Images/Sample_User_Icon.png'), fit: BoxFit.cover),
-              //       color: Colors.blue,
-              //     ),
-              //   ),
-              // ),
               SizedBox(
                 height: 30,
               ),
-
               Center(
                 child: Container(
                   height: 200,
@@ -76,13 +64,7 @@ class _RegistrationFormState extends State<RegistrationForm> {
                   ),
                 ),
               ),
-              // Text(
-              //   'Select Image',
-              //   style: TextStyle(
-              //     color: Colors.black,
-              //     fontSize: 30,
-              //   ),
-              // ),
+
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
@@ -126,7 +108,8 @@ class _RegistrationFormState extends State<RegistrationForm> {
                           label: 'Name',
                           hint: 'Name',
                           userController: txtname,
-                          inputKeyBoard: TextInputType.name),
+                          inputKeyBoard: TextInputType.name,
+                          usermaxLines: 1),
                     ),
                     SizedBox(
                       width: 10,
@@ -138,10 +121,14 @@ class _RegistrationFormState extends State<RegistrationForm> {
                           label: 'Surname',
                           hint: 'Surname',
                           userController: txtsurname,
-                          inputKeyBoard: TextInputType.name),
+                          inputKeyBoard: TextInputType.name,
+                          usermaxLines: 1),
                     ),
                   ],
                 ),
+              ),
+              SizedBox(
+                height: 10,
               ),
               SizedBox(
                 height: 70,
@@ -149,9 +136,39 @@ class _RegistrationFormState extends State<RegistrationForm> {
                 child: buildTextFormField(
                     label: 'Phone',
                     hint: 'Phone',
-                    userController: txtsurname,
-                    inputKeyBoard: TextInputType.number),
+                    userController: txtmobile,
+                    inputKeyBoard: TextInputType.number,
+                    usermaxLines: 1),
               ),
+              SizedBox(
+                height: 10,
+              ),
+              SizedBox(
+                height: 70,
+                width: 430,
+                child: buildTextFormField(
+                    label: 'Email',
+                    hint: 'Email',
+                    userController: txtemail,
+                    inputKeyBoard: TextInputType.name,
+                    usermaxLines: 1),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              SizedBox(
+                width: 430,
+                child: buildTextFormField(
+                    label: 'Address',
+                    hint: 'Address',
+                    userController: txtaddress,
+                    inputKeyBoard: TextInputType.name,
+                    usermaxLines: 4),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+
               Padding(
                 padding: const EdgeInsets.only(left: 15),
                 child: Align(
@@ -247,7 +264,14 @@ class _RegistrationFormState extends State<RegistrationForm> {
               // ),
 
               GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  name = txtname.text;
+                  surname = txtsurname.text;
+                  contact = txtmobile.text;
+                  email = txtemail.text;
+
+                  Navigator.of(context).pushNamed('/idcard');
+                },
                 child: Container(
                   height: 60,
                   width: 380,
@@ -273,15 +297,18 @@ class _RegistrationFormState extends State<RegistrationForm> {
       {required String label,
       required String hint,
       required userController,
-      required inputKeyBoard}) {
+      required inputKeyBoard,
+      required usermaxLines}) {
     return TextFormField(
       // onChanged: (value) {
       //   setState(() {
       //     name = value;
       //   });
       // },
+      maxLines: usermaxLines,
       controller: userController,
       keyboardType: inputKeyBoard,
+      textInputAction: TextInputAction.next,
       decoration: InputDecoration(
         hintText: hint,
         enabledBorder: OutlineInputBorder(
@@ -302,3 +329,7 @@ class _RegistrationFormState extends State<RegistrationForm> {
 }
 
 // bool gender=false;
+String? name;
+String? surname;
+String? contact;
+// String? ;
