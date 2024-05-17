@@ -24,13 +24,14 @@ class _RegistrationFormState extends State<RegistrationForm> {
     TextEditingController txtname = TextEditingController();
     TextEditingController txtsurname = TextEditingController();
     TextEditingController txtmobile = TextEditingController();
+    TextEditingController txtemail = TextEditingController();
     GlobalKey<FormState> formkey = GlobalKey();
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.blue,
         centerTitle: true,
         title: const Text(
-          'Image Picker',
+          'Id card',
           style: TextStyle(color: Colors.white),
         ),
       ),
@@ -54,13 +55,34 @@ class _RegistrationFormState extends State<RegistrationForm> {
               //     ),
               //   ),
               // ),
-              Text(
-                'Select Image',
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 30,
+              SizedBox(
+                height: 30,
+              ),
+
+              Center(
+                child: Container(
+                  height: 200,
+                  width: 200,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    image: (fileimage != null)
+                        ? DecorationImage(
+                            image: FileImage(fileimage!), fit: BoxFit.cover)
+                        : const DecorationImage(
+                            image: AssetImage(
+                                'Assets/Images/Sample_User_Icon.png'),
+                            fit: BoxFit.cover),
+                    color: Color(0xffEADDFF),
+                  ),
                 ),
               ),
+              // Text(
+              //   'Select Image',
+              //   style: TextStyle(
+              //     color: Colors.black,
+              //     fontSize: 30,
+              //   ),
+              // ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
@@ -75,7 +97,7 @@ class _RegistrationFormState extends State<RegistrationForm> {
                       icon: const Icon(
                         Icons.camera_alt,
                         color: Colors.black,
-                        size: 70,
+                        size: 60,
                       )),
                   IconButton(
                       onPressed: () async {
@@ -88,115 +110,110 @@ class _RegistrationFormState extends State<RegistrationForm> {
                       icon: const Icon(
                         Icons.image,
                         color: Colors.black,
-                        size: 70,
+                        size: 60,
                       ))
                 ],
               ),
-              SizedBox(
-                height: 70,
-                width: 360,
-                child: TextFormField(
-                  // onChanged: (value) {
-                  //   setState(() {
-                  //     name = value;
-                  //   });
-                  // },
-                  controller: txtname,
-                  decoration: InputDecoration(
-                    hintText: 'Name',
-                    enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(15),
-                        borderSide: BorderSide(
-                          color: Colors.black,
-                        )),
-                    labelText: 'Name',
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(15),
-                      borderSide: BorderSide(
-                        color: Colors.blue,
-                      ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  // mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    SizedBox(
+                      height: 70,
+                      width: 210,
+                      child: buildTextFormField(
+                          label: 'Name',
+                          hint: 'Name',
+                          userController: txtname,
+                          inputKeyBoard: TextInputType.name),
                     ),
-                  ),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    SizedBox(
+                      height: 70,
+                      width: 210,
+                      child: buildTextFormField(
+                          label: 'Surname',
+                          hint: 'Surname',
+                          userController: txtsurname,
+                          inputKeyBoard: TextInputType.name),
+                    ),
+                  ],
                 ),
               ),
               SizedBox(
                 height: 70,
-                width: 360,
-                child: TextFormField(
-                  // onChanged: (value) {
-                  //   setState(() {
-                  //     surname = value;
-                  //   });
-                  // },
-
-                  controller: txtsurname,
-                  decoration: InputDecoration(
-                    hintText: 'Surname',
-                    enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(15),
-                        borderSide: BorderSide(
-                          color: Colors.black,
-                        )),
-                    labelText: 'Surname',
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(15),
-                      borderSide: BorderSide(
-                        color: Colors.blue,
-                      ),
-                    ),
-                  ),
-
-                ),
+                width: 430,
+                child: buildTextFormField(
+                    label: 'Phone',
+                    hint: 'Phone',
+                    userController: txtsurname,
+                    inputKeyBoard: TextInputType.number),
               ),
-              SizedBox(
-                height: 70,
-                width: 360,
-                child: TextFormField(
-                  keyboardType: TextInputType.number,
-                  // onChanged: (value) {
-                  //   setState(() {
-                  //     mobileNo = value;
-                  //   });
-                  // },
-
-                  controller: txtmobile,
-                  decoration: InputDecoration(
-                    hintText: 'Phone',
-                    enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(15),
-                        borderSide: BorderSide(
-                          color: Colors.black,
-                        )),
-                    labelText: 'Phone',
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(15),
-                      borderSide: BorderSide(
-                        color: Colors.blue,
-                      ),
+              Padding(
+                padding: const EdgeInsets.only(left: 15),
+                child: Align(
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    'Gender :-',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 30,
                     ),
                   ),
                 ),
               ),
-
-              RadioListTile(
-                value: 'male',
-                groupValue: gender,
-                title: Text('Male'),
-                onChanged: (value) {
-                  setState(() {
-                    gender = value!;
-                  });
-                },
+              Padding(
+                padding: const EdgeInsets.only(left: 20),
+                child: Column(
+                  children: [
+                    RadioListTile(
+                      value: 'male',
+                      groupValue: gender,
+                      title: Text('Male'),
+                      onChanged: (value) {
+                        setState(() {
+                          gender = value!;
+                        });
+                      },
+                    ),
+                    RadioListTile(
+                      value: 'female',
+                      groupValue: gender,
+                      title: Text('Female'),
+                      onChanged: (value) {
+                        setState(() {
+                          gender = value!;
+                        });
+                      },
+                    ),
+                    RadioListTile(
+                      value: 'Other',
+                      groupValue: gender,
+                      title: Text('Other'),
+                      onChanged: (value) {
+                        setState(() {
+                          gender = value!;
+                        });
+                      },
+                    ),
+                  ],
+                ),
               ),
-              RadioListTile(
-                value: 'female',
-                groupValue: gender,
-                title: Text('Female'),
-                onChanged: (value) {
-                  setState(() {
-                    gender = value!;
-                  });
-                },
+              Padding(
+                padding: const EdgeInsets.only(left: 15),
+                child: Align(
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    'Skills :-',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 30,
+                    ),
+                  ),
+                ),
               ),
 
               ...List.generate(
@@ -207,10 +224,9 @@ class _RegistrationFormState extends State<RegistrationForm> {
                         onChanged: (value) {
                           setState(() {
                             categories[index]['isChecked'] = value!;
-                            if(categories[index]['isChecked'])
-                              {
-                                hobbiesList.add(index);
-                              }
+                            if (categories[index]['isChecked']) {
+                              hobbiesList.add(index);
+                            }
                           });
                         },
                       )),
@@ -231,9 +247,7 @@ class _RegistrationFormState extends State<RegistrationForm> {
               // ),
 
               GestureDetector(
-                onTap: () {
-
-                },
+                onTap: () {},
                 child: Container(
                   height: 60,
                   width: 380,
@@ -254,11 +268,37 @@ class _RegistrationFormState extends State<RegistrationForm> {
       ),
     );
   }
+
+  Widget buildTextFormField(
+      {required String label,
+      required String hint,
+      required userController,
+      required inputKeyBoard}) {
+    return TextFormField(
+      // onChanged: (value) {
+      //   setState(() {
+      //     name = value;
+      //   });
+      // },
+      controller: userController,
+      keyboardType: inputKeyBoard,
+      decoration: InputDecoration(
+        hintText: hint,
+        enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(15),
+            borderSide: BorderSide(
+              color: Colors.black,
+            )),
+        labelText: label,
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(15),
+          borderSide: BorderSide(
+            color: Colors.blue,
+          ),
+        ),
+      ),
+    );
+  }
 }
 
-
-
-
 // bool gender=false;
-
-
