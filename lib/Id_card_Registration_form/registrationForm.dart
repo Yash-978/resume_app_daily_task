@@ -2,7 +2,10 @@ import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:image_picker/image_picker.dart';
+
+import '../globalList_And_Variables.dart';
 
 class RegistrationForm extends StatefulWidget {
   const RegistrationForm({super.key});
@@ -204,22 +207,44 @@ class _RegistrationFormState extends State<RegistrationForm> {
                         onChanged: (value) {
                           setState(() {
                             categories[index]['isChecked'] = value!;
+                            if(categories[index]['isChecked'])
+                              {
+                                hobbiesList.add(index);
+                              }
                           });
                         },
                       )),
 
               // ...List.generate(categories.length, (index) => ),
+              // Wrap(
+              //   children: [
+              //     ...List.generate(hobbiesList.length, (index) => Card(
+              //      color: Colors.deepPurpleAccent,
+              //       child: Row(
+              //         children: [
+              //           Text(categories[index]['isChecked']),
+              //
+              //         ],
+              //       ),
+              //     ))
+              //   ],
+              // ),
 
-              Container(
-                height: 60,
-                width: 380,
-                decoration: const BoxDecoration(
-                  color: Colors.blue,
-                ),
-                child: const Center(
-                  child: Text(
-                    'Upload Me',
-                    style: TextStyle(color: Colors.white, fontSize: 25),
+              GestureDetector(
+                onTap: () {
+
+                },
+                child: Container(
+                  height: 60,
+                  width: 380,
+                  decoration: const BoxDecoration(
+                    color: Colors.blue,
+                  ),
+                  child: const Center(
+                    child: Text(
+                      'Upload Me',
+                      style: TextStyle(color: Colors.white, fontSize: 25),
+                    ),
                   ),
                 ),
               )
@@ -235,37 +260,5 @@ class _RegistrationFormState extends State<RegistrationForm> {
 
 
 // bool gender=false;
-String name = '';
-String surname = '';
-String mobileNo = '';
-String gender = 'male';
-bool c = false;
-bool cpp = false;
-bool hiking = false;
-bool physicalHobby = false;
-List categories = [
-  {
-    'name': 'Swimming',
-    'isChecked': false,
-  },
-  {
-    'name': 'Cycling',
-    'isChecked': false,
-  },
-  {
-    'name': 'Tennis',
-    'isChecked': false,
-  },
-  {
-    'name': 'Boxing',
-    'isChecked': false,
-  },
-  {
-    'name': 'VolleyBall',
-    'isChecked': false,
-  },
-  {
-    'name': 'Bowling',
-    'isChecked': false,
-  },
-];
+
+
