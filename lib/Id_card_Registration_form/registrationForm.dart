@@ -22,9 +22,11 @@ File? fileimage;
 class _RegistrationFormState extends State<RegistrationForm> {
   @override
   Widget build(BuildContext context) {
+    double h=MediaQuery.of(context).size.height;
+    double w=MediaQuery.of(context).size.width;
     TextEditingController txtname = TextEditingController();
     TextEditingController txtsurname = TextEditingController();
-    TextEditingController txtmobile = TextEditingController(text: '+91');
+    TextEditingController txtmobile = TextEditingController(text: '+91  ');
     TextEditingController txtemail = TextEditingController();
     TextEditingController txtaddress = TextEditingController();
 
@@ -98,33 +100,36 @@ class _RegistrationFormState extends State<RegistrationForm> {
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Row(
-                  // mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    SizedBox(
-                      height: 70,
-                      width: 210,
-                      child: buildTextFormField(
-                          label: 'Name',
-                          hint: 'Name',
-                          userController: txtname,
-                          inputKeyBoard: TextInputType.name,
-                          usermaxLines: 1),
-                    ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    SizedBox(
-                      height: 70,
-                      width: 210,
-                      child: buildTextFormField(
-                          label: 'Surname',
-                          hint: 'Surname',
-                          userController: txtsurname,
-                          inputKeyBoard: TextInputType.name,
-                          usermaxLines: 1),
-                    ),
-                  ],
+                child: SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    // mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      SizedBox(
+                        height: 70,
+                        width: 210,
+                        child: buildTextFormField(
+                            label: 'Name',
+                            hint: 'Name',
+                            userController: txtname,
+                            inputKeyBoard: TextInputType.name,
+                            usermaxLines: 1),
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      SizedBox(
+                        height: 70,
+                        width: 210,
+                        child: buildTextFormField(
+                            label: 'Surname',
+                            hint: 'Surname',
+                            userController: txtsurname,
+                            inputKeyBoard: TextInputType.name,
+                            usermaxLines: 1),
+                      ),
+                    ],
+                  ),
                 ),
               ),
               SizedBox(
@@ -186,36 +191,10 @@ class _RegistrationFormState extends State<RegistrationForm> {
                 padding: const EdgeInsets.only(left: 20),
                 child: Column(
                   children: [
-                    RadioListTile(
-                      value: 'male',
-                      groupValue: gender,
-                      title: Text('Male'),
-                      onChanged: (value) {
-                        setState(() {
-                          gender = value!;
-                        });
-                      },
-                    ),
-                    RadioListTile(
-                      value: 'female',
-                      groupValue: gender,
-                      title: Text('Female'),
-                      onChanged: (value) {
-                        setState(() {
-                          gender = value!;
-                        });
-                      },
-                    ),
-                    RadioListTile(
-                      value: 'Other',
-                      groupValue: gender,
-                      title: Text('Other'),
-                      onChanged: (value) {
-                        setState(() {
-                          gender = value!;
-                        });
-                      },
-                    ),
+                    buildRadioListTile(userGender: 'male', usertitleGender: 'Male'),
+                    buildRadioListTile(userGender: 'female', usertitleGender: 'Female'),
+                    buildRadioListTile(userGender: 'other', usertitleGender: 'Other'),
+
                   ],
                 ),
               ),
@@ -268,7 +247,10 @@ class _RegistrationFormState extends State<RegistrationForm> {
                   name = txtname.text;
                   surname = txtsurname.text;
                   contact = txtmobile.text;
-                  email = txtemail.text;
+                  useremail = txtemail.text;
+                  profileImage = fileimage!.path;
+                  Address = txtaddress.text;
+                  userGender = gender.toString();
 
                   Navigator.of(context).pushNamed('/idcard');
                 },
@@ -291,6 +273,19 @@ class _RegistrationFormState extends State<RegistrationForm> {
         ),
       ),
     );
+  }
+
+  RadioListTile<String> buildRadioListTile({required userGender,required usertitleGender}) {
+    return RadioListTile(
+                    value: userGender,
+                    groupValue: gender,
+                    title: Text(usertitleGender),
+                    onChanged: (value) {
+                      setState(() {
+                        gender = value!;
+                      });
+                    },
+                  );
   }
 
   Widget buildTextFormField(
@@ -332,4 +327,7 @@ class _RegistrationFormState extends State<RegistrationForm> {
 String? name;
 String? surname;
 String? contact;
-// String? ;
+String? useremail;
+String? profileImage;
+String? Address;
+String? userGender;

@@ -3,6 +3,7 @@
 import 'package:flutter/cupertino.dart';
 // import 'package:resume_app_daily_task/Utils/statusbar.dart';
 
+import '../Dynamic_Text_field/dynamicTextField.dart';
 import '../GmailDrawer/gmailDrawer.dart';
 import '../Google/gmail.dart';
 import '../Google/passwordScreen.dart';
@@ -24,7 +25,8 @@ class AppRoutes
     // '/':(context)=>gmailValidationChrome(),
     // '/pass':(context)=>passWordScreen(),
     // '/verified':(context)=>verifiedsuccessful(),
-    '/':(context)=>RegistrationForm(),
+    // '/':(context)=>RegistrationForm(),
+    '/':(context)=>DynamicTextField(),
     '/idcard':(context)=>idCard(),
 
 
