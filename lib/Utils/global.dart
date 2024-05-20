@@ -3,6 +3,8 @@
 import 'package:flutter/cupertino.dart';
 // import 'package:resume_app_daily_task/Utils/statusbar.dart';
 
+import '../Dynamic_Text_field/InVoice_pdf_Generator/invoice.dart';
+import '../Dynamic_Text_field/InVoice_pdf_Generator/pdf.dart';
 import '../Dynamic_Text_field/dynamicTextField.dart';
 import '../GmailDrawer/gmailDrawer.dart';
 import '../Google/gmail.dart';
@@ -26,8 +28,10 @@ class AppRoutes
     // '/pass':(context)=>passWordScreen(),
     // '/verified':(context)=>verifiedsuccessful(),
     // '/':(context)=>RegistrationForm(),
-    '/':(context)=>DynamicTextField(),
-    '/idcard':(context)=>idCard(),
+    '/':(context)=>InvoicePdf(),
+    '/pdf':(context)=>makepdf(),
+    // '/dynamicTextField':(context)=>DynamicTextField(),
+    // '/idcard':(context)=>idCard(),
 
 
   };

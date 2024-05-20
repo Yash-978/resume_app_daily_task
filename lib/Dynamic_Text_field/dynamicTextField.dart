@@ -51,7 +51,7 @@ class _DynamicTextFieldState extends State<DynamicTextField> {
                     IconButton(
                       onPressed: () {
                         setState(() {
-                          txtControllerList.removeAt(index);
+                          txtControllerList.removeAt(index-1);
                         });
                       },
                       icon: Icon(Icons.close),

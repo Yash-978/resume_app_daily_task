@@ -250,7 +250,7 @@ class _RegistrationFormState extends State<RegistrationForm> {
                   useremail = txtemail.text;
                   profileImage = fileimage!.path;
                   Address = txtaddress.text;
-                  userGender = gender.toString();
+                  // userGender = gender.toString();
 
                   Navigator.of(context).pushNamed('/idcard');
                 },
@@ -283,7 +283,7 @@ class _RegistrationFormState extends State<RegistrationForm> {
                     onChanged: (value) {
                       setState(() {
                         gender = value!;
-                      });
+                      },);
                     },
                   );
   }
