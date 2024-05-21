@@ -7,19 +7,7 @@ bool cpp = false;
 bool hiking = false;
 bool physicalHobby = false;
 
-List<InvoiceModel> invoiceList = [
-  InvoiceModel(name: 'Hp ', price: '122121', category: 'Laptop'),
-  InvoiceModel(name: 'Asus ', price: '354164', category: 'Laptop'),
-  InvoiceModel(name: 'Omen ', price: '657412', category: 'Laptop'),
-];
 
-class InvoiceModel {
-  String? name;
-  String? price;
-  String? category;
-
-  InvoiceModel({this.name, this.price, this.category});
-}
 
 List categories = [
   //Physical Activities
